@@ -28,12 +28,11 @@ h1 {
   }
 }
 
-.header{
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 
 .doctor {
   display: flex;
@@ -70,11 +69,69 @@ h1 {
       align-items: center;
       width: 50px;
       height: 50px;
-      border: 1px solid crimson;
+      border: 1px solid lightblue;
       border-radius: 5px;
       &:hover {
-        background-color: #dc6768;
+        background-color: lightblue;
       }
+    }
+  }
+}
+
+.step2 {
+  .timeBanner {
+    // border: 1px solid crimson;
+    border-radius: 4px;
+    padding: 5px 15px;
+    margin: 5px;
+  }
+  .free {
+    background-color: lightblue;
+    cursor: pointer;
+    &:hover {
+      background-color: lighten($color: crimson, $amount: 10%);
+    }
+  }
+  .used {
+    background-color: plum;
+  }
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.step3 {
+  text-align: center;
+  h2 {
+    margin-top: 50px;
+  }
+  .info-group {
+    &-label {
+      margin-right: 15px;
+      display: block;
+    }
+    &-input {
+      border: 1px solid #666666;
+      border-radius: 4px;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+    }
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+  }
+
+  .submit {
+    border: none;
+    background-color: lightBlue;
+    border-radius: 5px;
+    padding: 15px;
+    &:hover {
+      background-color: lightskyblue;
     }
   }
 }
