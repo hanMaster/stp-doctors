@@ -1,0 +1,71 @@
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+
+.App {
+  max-width: 768px;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+}
+
+.search {
+  margin: 20px 0;
+  position: relative;
+  max-width: 200px;
+  &-input {
+    font-size: 1rem;
+    padding: 6px 12px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #bababa;
+  }
+  &-icon {
+    position: absolute;
+    top: 9px;
+    right: -11px;
+  }
+}
+.doctor {
+  display: flex;
+  justify-content: space-between;
+  &-wrapper {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #bababa;
+    border-radius: 5px;
+    min-width: 200px;
+    &:hover {
+      background-color: #ffe88c;
+    }
+  }
+
+  &-name {
+    display: block;
+    font-size: 14px;
+    color: #444444;
+  }
+  &-spec {
+    font-size: 12px;
+    color: #666666;
+  }
+
+  &-days {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .day {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border: 1px solid crimson;
+      border-radius: 5px;
+      &:hover {
+        background-color: #dc6768;
+      }
+    }
+  }
+}
