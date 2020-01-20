@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import './App.scss'
 import { doctors } from './data/data'
-import moment from 'moment'
+import * as moment from 'moment'
+import 'moment/locale/ru'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import ruLocale from '@fullcalendar/core/locales/ru'
@@ -20,11 +21,11 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+    moment.locale('ru')
     const startDay = moment()
     const endDay = startDay.clone().endOf('isoWeek')
     const date = startDay.clone().subtract(1, 'day')
     const week = []
-
     while (date.isBefore(endDay, 'day')) {
       const currentDay = date.add(1, 'day').clone()
       week.push({ day: currentDay })
@@ -73,10 +74,21 @@ export default class App extends Component {
 
         {!this.state.daySelected && (
           <div className="step1">
-            <TextField
-              value={this.state.searchValue}
-              onChange={this.handleSearchChange}
-            />
+            <div className="header">
+              <TextField
+                value={this.state.searchValue}
+                onChange={this.handleSearchChange}
+              />
+              <p>
+                Неделя с <strong>{moment().format('LL')}</strong> по{' '}
+                <strong>
+                  {moment()
+                    .add(6, 'day')
+                    .format('LL')}
+                </strong>
+              </p>
+            </div>
+
             {doctorsList}
           </div>
         )}

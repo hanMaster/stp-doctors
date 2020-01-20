@@ -13,6 +13,7 @@ h1 {
   margin: 20px 0;
   position: relative;
   max-width: 200px;
+
   &-input {
     font-size: 1rem;
     padding: 6px 12px;
@@ -26,6 +27,14 @@ h1 {
     right: -11px;
   }
 }
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
 .doctor {
   display: flex;
   justify-content: space-between;
